@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disha's Website - Under Construction</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #ffdde1);
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite;
+        overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+    .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 50px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 40px rgba(255, 105, 180, 0.4);
+        color: #fff;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .typing {
+        font-size: 1.5rem;
+        font-weight: bold;
+        min-height: 40px;
+    }
+
+    .heart {
+        font-size: 2rem;
+        animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+        0% {transform: scale(1);}
+        25% {transform: scale(1.2);}
+        50% {transform: scale(1);}
+        75% {transform: scale(1.2);}
+        100% {transform: scale(1);}
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    /* Floating bubbles */
+    .bubble {
+        position: absolute;
+        bottom: -100px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: rise 10s infinite ease-in;
+    }
+
+    @keyframes rise {
+        0% {transform: translateY(0) scale(1);}
+        100% {transform: translateY(-120vh) scale(0.5);}
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="heart">💖</div>
+    <h1>Disha's Website</h1>
+    <div class="typing" id="typing"></div>
+    <div class="footer">✨ Something beautiful is coming soon ✨</div>
+</div>
+
+<script>
+    // Typing effect
+    const text = "🚧 Website is Under Construction 🚧";
+    let index = 0;
+
+    function typeEffect() {
+        if (index < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 70);
+        }
+    }
+
+    typeEffect();
+
+    // Create floating bubbles dynamically
+    function createBubble() {
+        const bubble = document.createElement("div");
+        bubble.classList.add("bubble");
+
+        let size = Math.random() * 40 + 20;
+        bubble.style.width = size + "px";
+        bubble.style.height = size + "px";
+        bubble.style.left = Math.random() * window.innerWidth + "px";
+        bubble.style.animationDuration = (Math.random() * 5 + 5) + "s";
+
+        document.body.appendChild(bubble);
+
+        setTimeout(() => {
+            bubble.remove();
+        }, 10000);
+    }
+
+    setInterval(createBubble, 500);
+</script>
+
+</body>
+</html>
