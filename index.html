@@ -1,131 +1,1892 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disha's Website - Under Construction</title>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins', sans-serif;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #ffdde1);
-        background-size: 400% 400%;
-        animation: gradientBG 10s ease infinite;
-        overflow: hidden;
-    }
-
-    @keyframes gradientBG {
-        0% {background-position: 0% 50%;}
-        50% {background-position: 100% 50%;}
-        100% {background-position: 0% 50%;}
-    }
-
-    .container {
-        text-align: center;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 50px;
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 10px 40px rgba(255, 105, 180, 0.4);
-        color: #fff;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-    }
-
-    .typing {
-        font-size: 1.5rem;
-        font-weight: bold;
-        min-height: 40px;
-    }
-
-    .heart {
-        font-size: 2rem;
-        animation: heartbeat 1.5s infinite;
-    }
-
-    @keyframes heartbeat {
-        0% {transform: scale(1);}
-        25% {transform: scale(1.2);}
-        50% {transform: scale(1);}
-        75% {transform: scale(1.2);}
-        100% {transform: scale(1);}
-    }
-
-    .footer {
-        margin-top: 20px;
-        font-size: 0.9rem;
-        opacity: 0.8;
-    }
-
-    /* Floating bubbles */
-    .bubble {
-        position: absolute;
-        bottom: -100px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        animation: rise 10s infinite ease-in;
-    }
-
-    @keyframes rise {
-        0% {transform: translateY(0) scale(1);}
-        100% {transform: translateY(-120vh) scale(0.5);}
-    }
-</style>
-</head>
-
-<body>
-
-<div class="container">
-    <div class="heart">💖</div>
-    <h1>Disha's Website</h1>
-    <div class="typing" id="typing"></div>
-    <div class="footer">✨ Something beautiful is coming soon ✨</div>
-</div>
-
-<script>
-    // Typing effect
-    const text = "🚧 Website is Under Construction 🚧";
-    let index = 0;
-
-    function typeEffect() {
-        if (index < text.length) {
-            document.getElementById("typing").innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, 70);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunlight Author | Stories That Whisper to the Soul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-tertiary: #1c1c1c;
+            --charcoal: #1f1f1f;
+            --charcoal-light: #2a2a2a;
+            --green-dark: #0f2a1f;
+            --green-medium: #1a4a32;
+            --green-accent: #2d7a50;
+            --yellow-soft: #e8d5a3;
+            --yellow-light: #f5e6b3;
+            --yellow-bright: #d4af37;
+            --text-primary: #f5f5f0;
+            --text-secondary: #b8b8b0;
+            --text-muted: #6a6a65;
         }
-    }
 
-    typeEffect();
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    // Create floating bubbles dynamically
-    function createBubble() {
-        const bubble = document.createElement("div");
-        bubble.classList.add("bubble");
+        html {
+            scroll-behavior: smooth;
+        }
 
-        let size = Math.random() * 40 + 20;
-        bubble.style.width = size + "px";
-        bubble.style.height = size + "px";
-        bubble.style.left = Math.random() * window.innerWidth + "px";
-        bubble.style.animationDuration = (Math.random() * 5 + 5) + "s";
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-        document.body.appendChild(bubble);
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--green-medium);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--green-accent);
+        }
 
-        setTimeout(() => {
-            bubble.remove();
-        }, 10000);
-    }
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-    setInterval(createBubble, 500);
-</script>
+        .cursor-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 2;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+        }
 
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--yellow-light);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo span {
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--yellow-bright), var(--yellow-soft));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow-light);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 1px solid var(--yellow-bright);
+            color: var(--yellow-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--yellow-bright);
+            color: var(--bg-primary);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .nav-cta:hover::before {
+            left: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 2px;
+            background: var(--yellow-light);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0 5%;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(15, 42, 31, 0.6) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(26, 74, 50, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg-primary) 0%, var(--green-dark) 50%, var(--bg-primary) 100%);
+            z-index: 0;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 1000px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--yellow-soft);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--yellow-light);
+        }
+
+        .hero-title strong {
+            font-weight: 600;
+            display: block;
+            background: linear-gradient(135deg, var(--yellow-light), var(--yellow-bright), var(--yellow-soft));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.7s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.9s forwards;
+        }
+
+        .btn-primary {
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--yellow-bright), var(--yellow-soft));
+            border: none;
+            color: var(--bg-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            padding: 1.2rem 3rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: var(--yellow-light);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--yellow-bright);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(180deg, var(--yellow-bright), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; height: 60px; }
+            50% { opacity: 1; height: 80px; }
+        }
+
+        /* Featured Stories Section */
+        .stories {
+            padding: 8rem 5%;
+            position: relative;
+            z-index: 3;
+            background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--yellow-soft);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--yellow-light);
+        }
+
+        .section-line {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--yellow-bright), transparent);
+            margin: 2rem auto;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .story-card {
+            background: linear-gradient(145deg, var(--charcoal), var(--bg-tertiary));
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .story-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--green-dark), var(--green-accent), var(--yellow-bright));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .story-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .story-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--green-dark), var(--charcoal-light));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-image-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L100 50L50 100L0 50Z' fill='none' stroke='%23d4af37' stroke-opacity='0.3' stroke-width='0.5'/%3E%3C/svg%3E");
+        }
+
+        .story-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--yellow-soft);
+        }
+
+        .story-content {
+            padding: 2rem;
+        }
+
+        .story-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .story-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .story-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .story-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--yellow-light);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        /* Author Section */
+        .author-section {
+            padding: 8rem 5%;
+            position: relative;
+            z-index: 3;
+            background: var(--bg-secondary);
+        }
+
+        .author-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .author-image {
+            position: relative;
+            height: 550px;
+            overflow: hidden;
+        }
+
+        .author-image-bg {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--yellow-bright);
+            z-index: 0;
+        }
+
+        .author-image-main {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .author-image-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L100 50L50 100L0 50Z' fill='none' stroke='%23d4af37' stroke-opacity='0.1' stroke-width='0.5'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .author-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--charcoal);
+            border: 3px solid var(--yellow-bright);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--yellow-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        .author-badge {
+            position: absolute;
+            bottom: 2rem;
+            right: -1rem;
+            background: var(--yellow-bright);
+            color: var(--bg-primary);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .author-badge-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .author-badge-text {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .author-content {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .author-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .author-label {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--yellow-soft);
+            margin-bottom: 1rem;
+        }
+
+        .author-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .author-role {
+            font-style: italic;
+            color: var(--green-accent);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .author-bio {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+        }
+
+        .author-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .author-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author-feature-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--yellow-light);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .author-feature span {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .author-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--yellow-bright);
+            border-color: var(--yellow-bright);
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--yellow-light);
+            transition: fill 0.3s ease;
+        }
+
+        .social-link:hover svg {
+            fill: var(--bg-primary);
+        }
+
+        /* Blog Categories */
+        .categories {
+            padding: 8rem 5%;
+            position: relative;
+            z-index: 3;
+            background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 280px);
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-item {
+            position: relative;
+            overflow: hidden;
+            background: var(--charcoal);
+            cursor: pointer;
+        }
+
+        .category-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .category-item-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--green-dark), var(--charcoal-light));
+            transition: transform 0.6s ease;
+        }
+
+        .category-item:nth-child(1) .category-item-bg {
+            background: linear-gradient(135deg, var(--green-medium), var(--green-dark));
+        }
+
+        .category-item:nth-child(2) .category-item-bg {
+            background: linear-gradient(135deg, var(--charcoal-light), var(--green-dark));
+        }
+
+        .category-item:nth-child(3) .category-item-bg {
+            background: linear-gradient(135deg, var(--green-dark), var(--charcoal));
+        }
+
+        .category-item:nth-child(4) .category-item-bg {
+            background: linear-gradient(135deg, var(--charcoal), var(--green-medium));
+        }
+
+        .category-item:nth-child(5) .category-item-bg {
+            background: linear-gradient(135deg, var(--green-medium), var(--charcoal-light));
+        }
+
+        .category-item:hover .category-item-bg {
+            transform: scale(1.1);
+        }
+
+        .category-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .category-item:hover .category-overlay {
+            opacity: 1;
+        }
+
+        .category-count {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--yellow-soft);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        /* Quotes Section */
+        .quotes {
+            padding: 8rem 5%;
+            position: relative;
+            z-index: 3;
+            background: var(--bg-primary);
+            overflow: hidden;
+        }
+
+        .quotes-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 0% 50%, rgba(15, 42, 31, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+        }
+
+        .quotes-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .quote-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-track {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .quote {
+            min-width: 100%;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .quote-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 2rem;
+            opacity: 0.3;
+        }
+
+        .quote-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--yellow-bright);
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .quote-source {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quote-book {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--yellow-light);
+        }
+
+        .quote-author {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .quote-dots {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .quote-dot {
+            width: 12px;
+            height: 12px;
+            border: 1px solid var(--yellow-bright);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quote-dot.active {
+            background: var(--yellow-bright);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 8rem 5%;
+            position: relative;
+            z-index: 3;
+            background: linear-gradient(180deg, var(--bg-primary), var(--green-dark), var(--bg-primary));
+        }
+
+        .newsletter-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .newsletter-info {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .newsletter-info.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .newsletter-label {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--yellow-soft);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-text {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .newsletter-perks {
+            margin-bottom: 2.5rem;
+        }
+
+        .perk-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .perk-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .perk-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--yellow-light);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .perk-content h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: var(--text-primary);
+        }
+
+        .perk-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .newsletter-form {
+            background: var(--charcoal);
+            padding: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .newsletter-form.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            color: var(--text-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--yellow-bright);
+            background: var(--bg-secondary);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--yellow-bright), var(--yellow-soft));
+            border: none;
+            color: var(--bg-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .form-submit:hover {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5% 2rem;
+            background: var(--bg-primary);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+            z-index: 3;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .footer-brand .logo {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--yellow-light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow-light);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--yellow-light);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .author-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .author-image {
+                height: 400px;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 250px);
+            }
+
+            .category-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .newsletter-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .author-features {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .category-item:nth-child(1) {
+                grid-column: span 1;
+                height: 300px;
+            }
+
+            .category-item {
+                height: 200px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">Sunlight<span>Author</span></a>
+        <ul class="nav-links">
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#author">Author</a></li>
+            <li><a href="#categories">Collections</a></li>
+            <li><a href="#newsletter">Subscribe</a></li>
+        </ul>
+        <button class="nav-cta">More Stories</button>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <br> <br> <br> <br>
+            <span class="hero-badge">Literary Escapes</span> <br>
+            <h1 class="hero-title">
+                <em>Explore</em> Worlds Woven
+                <strong>In Words</strong>
+            </h1>
+            <p class="hero-subtitle">
+                Discover captivating stories, thought-provoking blogs, and literary journeys that transport you to realms unknown.
+            </p>    <br><br><br>    
+            <div class="hero-buttons">
+                <button class="btn-primary">Read Stories</button> &nbsp;&nbsp;
+                <button class="btn-secondary">  Meet the Author</button>
+            </div>
+        </div>
+      
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Featured Stories Section -->
+    <section class="stories" id="stories">
+        <div class="section-header">
+            <span class="section-label">Latest Works</span>
+            <h2 class="section-title">Featured <em>Stories</em></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="stories-grid">
+            <article class="story-card">
+                <div class="story-image">
+                    <div class="story-image-pattern"></div>
+                    <span class="story-category">Fiction</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-meta">
+                        <span>Dec 15, 2024</span>
+                        <span>8 min read</span>
+                    </div>
+                    <h3 class="story-title">The Whispering Shadows</h3>
+                    <p class="story-excerpt">In the quiet town of Merridale, secrets whispered through ancient oaks, carrying tales of forgotten love and mysteries yet to unfold...</p>
+                    <a href="#" class="read-more">Continue Reading →</a>
+                </div>
+            </article>
+            <article class="story-card">
+                <div class="story-image">
+                    <div class="story-image-pattern"></div>
+                    <span class="story-category">Poetry</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-meta">
+                        <span>Dec 10, 2024</span>
+                        <span>3 min read</span>
+                    </div>
+                    <h3 class="story-title">Echoes of Dawn</h3>
+                    <p class="story-excerpt">A collection of verses capturing the ephemeral beauty of morning light and the quiet strength found in new beginnings...</p>
+                    <a href="#" class="read-more">Continue Reading →</a>
+                </div>
+            </article>
+            <article class="story-card">
+                <div class="story-image">
+                    <div class="story-image-pattern"></div>
+                    <span class="story-category">Blog</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-meta">
+                        <span>Dec 5, 2024</span>
+                        <span>6 min read</span>
+                    </div>
+                    <h3 class="story-title">The Art of Slow Living</h3>
+                    <p class="story-excerpt">Finding peace in a chaotic world through mindful practices, intentional choices, and the beauty of embracing simplicity...</p>
+                    <a href="#" class="read-more">Continue Reading →</a>
+                </div>
+            </article>
+            <article class="story-card">
+                <div class="story-image">
+                    <div class="story-image-pattern"></div>
+                    <span class="story-category">Fantasy</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-meta">
+                        <span>Nov 28, 2024</span>
+                        <span>12 min read</span>
+                    </div>
+                    <h3 class="story-title">Beyond the Veil</h3>
+                    <p class="story-excerpt">When worlds collide and magic stirs, one soul must choose between the life they know and the destiny that awaits...</p>
+                    <a href="#" class="read-more">Continue Reading →</a>
+                </div>
+            </article>
+            <article class="story-card">
+                <div class="story-image">
+                    <div class="story-image-pattern"></div>
+                    <span class="story-category">Essay</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-meta">
+                        <span>Nov 20, 2024</span>
+                        <span>10 min read</span>
+                    </div>
+                    <h3 class="story-title">Letters to Tomorrow</h3>
+                    <p class="story-excerpt">Reflections on time, memory, and the messages we leave behind for generations yet to come...</p>
+                    <a href="#" class="read-more">Continue Reading →</a>
+                </div>
+            </article>
+            <article class="story-card">
+                <div class="story-image">
+                    <div class="story-image-pattern"></div>
+                    <span class="story-category">Romance</span>
+                </div>
+                <div class="story-content">
+                    <div class="story-meta">
+                        <span>Nov 15, 2024</span>
+                        <span>15 min read</span>
+                    </div>
+                    <h3 class="story-title">Autumn in Paris</h3>
+                    <p class="story-excerpt">A chance encounter beneath falling leaves leads to an unforgettable journey through the city of lights and love...</p>
+                    <a href="#" class="read-more">Continue Reading →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="author-section" id="author">
+        <div class="author-container">
+            <div class="author-image">
+                <div class="author-image-bg"></div>
+                <div class="author-image-main">
+                    <div class="author-image-pattern"></div>
+                    <div class="author-avatar">DS</div>
+                </div>
+                <div class="author-badge">
+                    <div class="author-badge-number">50+</div>
+                    <div class="author-badge-text">Published Works</div>
+                </div>
+            </div>
+            <div class="author-content">
+                <span class="author-label">The Voice Behind</span>
+                <h2 class="author-title">Disha Sehdev</h2>
+                <p class="author-role">Author & Storyteller</p>
+                <p class="author-bio">
+                    With a pen as my compass and imagination as my map, I traverse the landscapes of human emotion, weaving tales that resonate with the soul. Each story is a journey, each word a stepping stone to worlds both familiar and fantastical.
+                </p>
+                <p class="author-bio">
+                    My writing explores the delicate threads that connect us all—love, loss, hope, and the eternal search for meaning. Through fiction, poetry, and reflective essays, I invite readers to pause, ponder, and perhaps see the world through a different lens.
+                </p>
+                <div class="author-features">
+                    <div class="author-feature">
+                        <div class="author-feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        </div>
+                        <span>Award-Winning Author</span>
+                    </div>
+                    <div class="author-feature">
+                        <div class="author-feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </div>
+                        <span>3 Published Books</span>
+                    </div>
+                    <div class="author-feature">
+                        <div class="author-feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <span>10K+ Readers</span>
+                    </div>
+                    <div class="author-feature">
+                        <div class="author-feature-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
+                        </div>
+                        <span>Featured Writer</span>
+                    </div>
+                </div>
+                <button class="btn-primary">Read Full Bio</button>
+                <div class="author-social">
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="section-header">
+            <span class="section-label">Browse</span>
+            <h2 class="section-title">Story <em>Collections</em></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="categories-grid">
+            <div class="category-item">
+                <div class="category-item-bg"></div>
+                <div class="category-overlay">
+                    <span class="category-count">12 Stories</span>
+                    <h3 class="category-name">Romance & Love</h3>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-item-bg"></div>
+                <div class="category-overlay">
+                    <span class="category-count">8 Stories</span>
+                    <h3 class="category-name">Mystery & Thriller</h3>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-item-bg"></div>
+                <div class="category-overlay">
+                    <span class="category-count">15 Poems</span>
+                    <h3 class="category-name">Poetry & Verses</h3>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-item-bg"></div>
+                <div class="category-overlay">
+                    <span class="category-count">6 Stories</span>
+                    <h3 class="category-name">Fantasy Worlds</h3>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-item-bg"></div>
+                <div class="category-overlay">
+                    <span class="category-count">10 Posts</span>
+                    <h3 class="category-name">Personal Essays</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="quotes">
+        <div class="quotes-bg"></div>
+        <div class="section-header">
+            <span class="section-label">Reader Favorites</span>
+            <h2 class="section-title">Memorable <em>Quotes</em></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="quotes-container">
+            <div class="quote-slider">
+                <div class="quote-track" id="quote-track">
+                    <div class="quote">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                        </div>
+                        <p class="quote-text">"In the silence between heartbeats, I found the courage to listen to my own soul whispering truths I had long forgotten."</p>
+                        <div class="quote-source">
+                            <span class="quote-book">The Whispering Shadows</span>
+                            <span class="quote-author">Chapter 7</span>
+                        </div>
+                    </div>
+                    <div class="quote">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                        </div>
+                        <p class="quote-text">"Love is not the absence of fear, but the decision that someone is worth the trembling of your hands."</p>
+                        <div class="quote-source">
+                            <span class="quote-book">Autumn in Paris</span>
+                            <span class="quote-author">Chapter 12</span>
+                        </div>
+                    </div>
+                    <div class="quote">
+                        <div class="quote-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                        </div>
+                        <p class="quote-text">"We are all stories waiting to be told, pages yet to be written, chapters longing to be lived."</p>
+                        <div class="quote-source">
+                            <span class="quote-book">Letters to Tomorrow</span>
+                            <span class="quote-author">Opening Passage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-dots">
+                <div class="quote-dot active" data-index="0"></div>
+                <div class="quote-dot" data-index="1"></div>
+                <div class="quote-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="newsletter-container">
+            <div class="newsletter-info">
+                <span class="newsletter-label">Stay Connected</span>
+                <h2 class="newsletter-title">Join the Literary Journey</h2>
+                <p class="newsletter-text">
+                    Subscribe to receive new stories, exclusive excerpts, behind-the-scenes insights, and first access to upcoming book releases.
+                </p>
+                <div class="newsletter-perks">
+                    <div class="perk-item">
+                        <div class="perk-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 2L15 22l-4-9-9-4z"/></svg>
+                        </div>
+                        <div class="perk-content">
+                            <h4>Weekly Stories</h4>
+                            <p>Fresh content delivered every Sunday morning</p>
+                        </div>
+                    </div>
+                    <div class="perk-item">
+                        <div class="perk-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        </div>
+                        <div class="perk-content">
+                            <h4>Exclusive Excerpts</h4>
+                            <p>Preview chapters from upcoming books</p>
+                        </div>
+                    </div>
+                    <div class="perk-item">
+                        <div class="perk-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <div class="perk-content">
+                            <h4>Community Access</h4>
+                            <p>Join discussions with fellow readers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="newsletter-form">
+                <h3 class="form-title">Subscribe Now</h3>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Favorite Genre</label>
+                    <select>
+                        <option value="">Select your preference</option>
+                        <option value="romance">Romance</option>
+                        <option value="mystery">Mystery & Thriller</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="poetry">Poetry</option>
+                        <option value="essays">Personal Essays</option>
+                    </select>
+                </div>
+                <button type="submit" class="form-submit">Join the Journey</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">SUNLIGHT<span>AUTHOR</span></a>
+                <p>Where stories breathe and words come alive. A sanctuary for readers seeking meaning, beauty, and connection through the power of narrative.</p>
+            </div>
+            <div class="footer-nav">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#stories">Stories</a></li>
+                    <li><a href="#author">About Author</a></li>
+                    <li><a href="#categories">Collections</a></li>
+                    <li><a href="#newsletter">Subscribe</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4 class="footer-title">Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Fiction</a></li>
+                    <li><a href="#">Poetry</a></li>
+                    <li><a href="#">Personal Essays</a></li>
+                    <li><a href="#">Fantasy</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4 class="footer-title">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="mailto:contact@sunlightauthor@gmail.com">contact@sunlightauthor@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">2026 Sunlight Author. All rights reserved. Stories by Aria Kensington.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Particle System
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+                this.hue = Math.random() > 0.5 ? 45 : 140;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 150) {
+                    const force = (150 - distance) / 150;
+                    this.x -= dx * force * 0.02;
+                    this.y -= dy * force * 0.02;
+                }
+                
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                if (this.hue === 45) {
+                    ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                } else {
+                    ctx.fillStyle = `rgba(45, 122, 80, ${this.opacity})`;
+                }
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Cursor Glow
+        const cursorGlow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        });
+
+        // Navigation Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.story-card, .author-content, .newsletter-info, .newsletter-form').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Staggered Animation for Story Cards
+        const storyCards = document.querySelectorAll('.story-card');
+        const storyObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        storyCards.forEach(card => storyObserver.observe(card));
+
+        // Quote Slider
+        const quoteTrack = document.getElementById('quote-track');
+        const quoteDots = document.querySelectorAll('.quote-dot');
+        let currentQuote = 0;
+
+        function goToQuote(index) {
+            currentQuote = index;
+            quoteTrack.style.transform = `translateX(-${index * 100}%)`;
+            quoteDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        quoteDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToQuote(parseInt(dot.dataset.index));
+            });
+        });
+
+        // Auto-slide quotes
+        setInterval(() => {
+            currentQuote = (currentQuote + 1) % 3;
+            goToQuote(currentQuote);
+        }, 6000);
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form Submission
+        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Welcome to the Sunlight Author family! You\'ll receive a confirmation email shortly.');
+        });
+
+        // Button Hover Effects
+        document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translateY(-3px)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
