@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sunlight Author | Stories That Whisper to the Soul</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg-primary: #0a0a0a;
@@ -33,6 +36,33 @@
             scroll-behavior: smooth;
         }
 
+        /* Nav logo styling */
+        .nav_logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav_logo img {
+            width: 120px;
+            /* adjust size */
+            height: auto;
+            /* keeps aspect ratio */
+            margin-right: 10px;
+            /* spacing between logo and text */
+        }
+
+        /* Navbar layout */
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             background: var(--bg-primary);
@@ -44,13 +74,16 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: var(--bg-secondary);
         }
+
         ::-webkit-scrollbar-thumb {
             background: var(--green-medium);
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--green-accent);
         }
@@ -219,7 +252,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(ellipse at 20% 80%, rgba(15, 42, 31, 0.6) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 20%, rgba(26, 74, 50, 0.4) 0%, transparent 50%),
                 radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 60%),
@@ -374,8 +407,17 @@
         }
 
         @keyframes scrollPulse {
-            0%, 100% { opacity: 0.3; height: 60px; }
-            50% { opacity: 1; height: 80px; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+                height: 60px;
+            }
+
+            50% {
+                opacity: 1;
+                height: 80px;
+            }
         }
 
         /* Featured Stories Section */
@@ -849,7 +891,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(ellipse at 0% 50%, rgba(15, 42, 31, 0.4) 0%, transparent 50%),
                 radial-gradient(ellipse at 100% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
         }
@@ -1194,8 +1236,13 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes fadeInUp {
@@ -1203,6 +1250,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1257,7 +1305,8 @@
                 align-items: center;
             }
 
-            .btn-primary, .btn-secondary {
+            .btn-primary,
+            .btn-secondary {
                 width: 100%;
                 max-width: 280px;
             }
@@ -1292,13 +1341,17 @@
         }
     </style>
 </head>
+
 <body>
     <canvas id="particles-canvas"></canvas>
     <div class="cursor-glow" id="cursor-glow"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
-        <a href="#" class="logo">Sunlight<span>Author</span></a>
+        <a href="#" class="nav_logo">
+            <img src="logo.png" alt="Sunlight Author Logo" />
+        
+        </a>
         <ul class="nav-links">
             <li><a href="#stories">Stories</a></li>
             <li><a href="#author">Author</a></li>
@@ -1325,14 +1378,15 @@
                 <strong>In Words</strong>
             </h1>
             <p class="hero-subtitle">
-                Discover captivating stories, thought-provoking blogs, and literary journeys that transport you to realms unknown.
-            </p>    <br><br><br>    
+                Discover captivating stories, thought-provoking blogs, and literary journeys that transport you to
+                realms unknown.
+            </p> <br><br><br>
             <div class="hero-buttons">
                 <button class="btn-primary">Read Stories</button> &nbsp;&nbsp;
-                <button class="btn-secondary">  Meet the Author</button>
+                <button class="btn-secondary"> Meet the Author</button>
             </div>
         </div>
-      
+
         <div class="hero-scroll">
             <span>Scroll</span>
             <div class="scroll-line"></div>
@@ -1358,7 +1412,8 @@
                         <span>8 min read</span>
                     </div>
                     <h3 class="story-title">The Whispering Shadows</h3>
-                    <p class="story-excerpt">In the quiet town of Merridale, secrets whispered through ancient oaks, carrying tales of forgotten love and mysteries yet to unfold...</p>
+                    <p class="story-excerpt">In the quiet town of Merridale, secrets whispered through ancient oaks,
+                        carrying tales of forgotten love and mysteries yet to unfold...</p>
                     <a href="#" class="read-more">Continue Reading →</a>
                 </div>
             </article>
@@ -1373,7 +1428,8 @@
                         <span>3 min read</span>
                     </div>
                     <h3 class="story-title">Echoes of Dawn</h3>
-                    <p class="story-excerpt">A collection of verses capturing the ephemeral beauty of morning light and the quiet strength found in new beginnings...</p>
+                    <p class="story-excerpt">A collection of verses capturing the ephemeral beauty of morning light and
+                        the quiet strength found in new beginnings...</p>
                     <a href="#" class="read-more">Continue Reading →</a>
                 </div>
             </article>
@@ -1388,7 +1444,8 @@
                         <span>6 min read</span>
                     </div>
                     <h3 class="story-title">The Art of Slow Living</h3>
-                    <p class="story-excerpt">Finding peace in a chaotic world through mindful practices, intentional choices, and the beauty of embracing simplicity...</p>
+                    <p class="story-excerpt">Finding peace in a chaotic world through mindful practices, intentional
+                        choices, and the beauty of embracing simplicity...</p>
                     <a href="#" class="read-more">Continue Reading →</a>
                 </div>
             </article>
@@ -1403,7 +1460,8 @@
                         <span>12 min read</span>
                     </div>
                     <h3 class="story-title">Beyond the Veil</h3>
-                    <p class="story-excerpt">When worlds collide and magic stirs, one soul must choose between the life they know and the destiny that awaits...</p>
+                    <p class="story-excerpt">When worlds collide and magic stirs, one soul must choose between the life
+                        they know and the destiny that awaits...</p>
                     <a href="#" class="read-more">Continue Reading →</a>
                 </div>
             </article>
@@ -1418,7 +1476,8 @@
                         <span>10 min read</span>
                     </div>
                     <h3 class="story-title">Letters to Tomorrow</h3>
-                    <p class="story-excerpt">Reflections on time, memory, and the messages we leave behind for generations yet to come...</p>
+                    <p class="story-excerpt">Reflections on time, memory, and the messages we leave behind for
+                        generations yet to come...</p>
                     <a href="#" class="read-more">Continue Reading →</a>
                 </div>
             </article>
@@ -1433,7 +1492,8 @@
                         <span>15 min read</span>
                     </div>
                     <h3 class="story-title">Autumn in Paris</h3>
-                    <p class="story-excerpt">A chance encounter beneath falling leaves leads to an unforgettable journey through the city of lights and love...</p>
+                    <p class="story-excerpt">A chance encounter beneath falling leaves leads to an unforgettable journey
+                        through the city of lights and love...</p>
                     <a href="#" class="read-more">Continue Reading →</a>
                 </div>
             </article>
@@ -1459,33 +1519,50 @@
                 <h2 class="author-title">Disha Sehdev</h2>
                 <p class="author-role">Author & Storyteller</p>
                 <p class="author-bio">
-                    With a pen as my compass and imagination as my map, I traverse the landscapes of human emotion, weaving tales that resonate with the soul. Each story is a journey, each word a stepping stone to worlds both familiar and fantastical.
+                    With a pen as my compass and imagination as my map, I traverse the landscapes of human emotion,
+                    weaving tales that resonate with the soul. Each story is a journey, each word a stepping stone to
+                    worlds both familiar and fantastical.
                 </p>
                 <p class="author-bio">
-                    My writing explores the delicate threads that connect us all—love, loss, hope, and the eternal search for meaning. Through fiction, poetry, and reflective essays, I invite readers to pause, ponder, and perhaps see the world through a different lens.
+                    My writing explores the delicate threads that connect us all—love, loss, hope, and the eternal
+                    search for meaning. Through fiction, poetry, and reflective essays, I invite readers to pause,
+                    ponder, and perhaps see the world through a different lens.
                 </p>
                 <div class="author-features">
                     <div class="author-feature">
                         <div class="author-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
                         </div>
                         <span>Award-Winning Author</span>
                     </div>
                     <div class="author-feature">
                         <div class="author-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                            </svg>
                         </div>
                         <span>3 Published Books</span>
                     </div>
                     <div class="author-feature">
                         <div class="author-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
                         </div>
                         <span>10K+ Readers</span>
                     </div>
                     <div class="author-feature">
                         <div class="author-feature-icon">
-                            <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="20,6 9,17 4,12" />
+                            </svg>
                         </div>
                         <span>Featured Writer</span>
                     </div>
@@ -1493,13 +1570,22 @@
                 <button class="btn-primary">Read Full Bio</button>
                 <div class="author-social">
                     <a href="#" class="social-link">
-                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
                     </a>
                     <a href="#" class="social-link">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
                     </a>
                     <a href="#" class="social-link">
-                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -1565,9 +1651,12 @@
                 <div class="quote-track" id="quote-track">
                     <div class="quote">
                         <div class="quote-icon">
-                            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                            </svg>
                         </div>
-                        <p class="quote-text">"In the silence between heartbeats, I found the courage to listen to my own soul whispering truths I had long forgotten."</p>
+                        <p class="quote-text">"In the silence between heartbeats, I found the courage to listen to my
+                            own soul whispering truths I had long forgotten."</p>
                         <div class="quote-source">
                             <span class="quote-book">The Whispering Shadows</span>
                             <span class="quote-author">Chapter 7</span>
@@ -1575,9 +1664,12 @@
                     </div>
                     <div class="quote">
                         <div class="quote-icon">
-                            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                            </svg>
                         </div>
-                        <p class="quote-text">"Love is not the absence of fear, but the decision that someone is worth the trembling of your hands."</p>
+                        <p class="quote-text">"Love is not the absence of fear, but the decision that someone is worth
+                            the trembling of your hands."</p>
                         <div class="quote-source">
                             <span class="quote-book">Autumn in Paris</span>
                             <span class="quote-author">Chapter 12</span>
@@ -1585,9 +1677,12 @@
                     </div>
                     <div class="quote">
                         <div class="quote-icon">
-                            <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                            </svg>
                         </div>
-                        <p class="quote-text">"We are all stories waiting to be told, pages yet to be written, chapters longing to be lived."</p>
+                        <p class="quote-text">"We are all stories waiting to be told, pages yet to be written, chapters
+                            longing to be lived."</p>
                         <div class="quote-source">
                             <span class="quote-book">Letters to Tomorrow</span>
                             <span class="quote-author">Opening Passage</span>
@@ -1610,12 +1705,15 @@
                 <span class="newsletter-label">Stay Connected</span>
                 <h2 class="newsletter-title">Join the Literary Journey</h2>
                 <p class="newsletter-text">
-                    Subscribe to receive new stories, exclusive excerpts, behind-the-scenes insights, and first access to upcoming book releases.
+                    Subscribe to receive new stories, exclusive excerpts, behind-the-scenes insights, and first access
+                    to upcoming book releases.
                 </p>
                 <div class="newsletter-perks">
                     <div class="perk-item">
                         <div class="perk-icon">
-                            <svg viewBox="0 0 24 24"><path d="M22 2L15 22l-4-9-9-4z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 2L15 22l-4-9-9-4z" />
+                            </svg>
                         </div>
                         <div class="perk-content">
                             <h4>Weekly Stories</h4>
@@ -1624,7 +1722,10 @@
                     </div>
                     <div class="perk-item">
                         <div class="perk-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
                         </div>
                         <div class="perk-content">
                             <h4>Exclusive Excerpts</h4>
@@ -1633,7 +1734,9 @@
                     </div>
                     <div class="perk-item">
                         <div class="perk-icon">
-                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <svg viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
                         </div>
                         <div class="perk-content">
                             <h4>Community Access</h4>
@@ -1673,7 +1776,8 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">SUNLIGHT<span>AUTHOR</span></a>
-                <p>Where stories breathe and words come alive. A sanctuary for readers seeking meaning, beauty, and connection through the power of narrative.</p>
+                <p>Where stories breathe and words come alive. A sanctuary for readers seeking meaning, beauty, and
+                    connection through the power of narrative.</p>
             </div>
             <div class="footer-nav">
                 <h4 class="footer-title">Quick Links</h4>
@@ -1742,7 +1846,7 @@
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-                
+
                 const dx = mouseX - this.x;
                 const dy = mouseY - this.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
@@ -1751,7 +1855,7 @@
                     this.x -= dx * force * 0.02;
                     this.y -= dy * force * 0.02;
                 }
-                
+
                 if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
                     this.reset();
                 }
@@ -1860,7 +1964,7 @@
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1889,4 +1993,5 @@
         });
     </script>
 </body>
+
 </html>
